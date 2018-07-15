@@ -18,6 +18,9 @@ describe('Simple Calculator', () => {
             expect(calculator.add(-2,3)).to.equal(1);
             expect(calculator.add(-2,-3)).to.equal(-5);
         });
+        it('throws exception when given undefined parameter', () => {
+            expect(() => calculator.add(2)).to.throw("Can't add an undefined number");
+        });
     });
 
     describe('subtract', () => {
@@ -25,6 +28,9 @@ describe('Simple Calculator', () => {
             expect(calculator.subtract(2,3)).to.equal(-1);
             expect(calculator.subtract(-2,3)).to.equal(-5);
             expect(calculator.subtract(-2,-3)).to.equal(1);
+        });
+        it('throws exception when given undefined parameter', () => {
+            expect(() => calculator.subtract(2)).to.throw("Can't subtract an undefined number");
         });
     });
 
@@ -34,6 +40,9 @@ describe('Simple Calculator', () => {
             expect(calculator.multiply(-2,3)).to.equal(-6);
             expect(calculator.multiply(-2,-3)).to.equal(6);
             expect(calculator.multiply(-2,0)).to.equal(0);
+        });
+        it('throws exception when given undefined parameter', () => {
+            expect(() => calculator.multiply(2)).to.throw("Can't multiply an undefined number");
         });
     });
 });
